@@ -27,7 +27,20 @@ UserSchema.pre('save', async function(next) {
 module.exports = models.User || model('User', UserSchema)
  
 
-/*
+/* Notes:
+
+- more straightforward method: 
+
+password:{
+    type: String,
+    required: true,
+    minlength: 5,
+    maxlength: 20
+  }
+
+  or 
+
+  - if need to be more complex than just min and max length
 password: {
     type: String,
     required: true,
